@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Send Files</title>
+</head>
+<body>
+	<h1>File Uploader</h1>
+	Problem:
+	<select id="dest" name="dest">
+		<option value="submitb.cgi">基礎課題</option>
+		<option value="submita.cgi">応用課題</option>
+		<option value="submite.cgi">追加課題</option>
+	</select>
+	<form method="post" enctype="multipart/form-data" id="uploader">
+		<div class="info">
+			StudentID: <input type="text" name="studentID" value="C0117xxx"><br>
+			Password: <input type="text" name="password" value="8rphggwgw" autocomplete="on"><br>
+		</div>
+		<div class="dnd" style="width:500px;height:100px;background:#eee;border:solid 1px #ccc;border-radius:15px;padding:20px;">
+			Drop some files here...
+		</div>
+		<div class="uploader">
+			ファイル1 : <input type="file" name="uploadfile1"><br>
+			ファイル2 : <input type="file" name="uploadfile2"><br>
+			ファイル3 : <input type="file" name="uploadfile3"><br>
+			ファイル4 : <input type="file" name="uploadfile4"><br>
+			ファイル5 : <input type="file" name="uploadfile5"><br>
+			ファイル6 : <input type="file" name="uploadfile6"><br>
+			ファイル7 : <input type="file" name="uploadfile7"><br>
+			ファイル8 : <input type="file" name="uploadfile8"><br>
+			ファイル9 : <input type="file" name="uploadfile9"><br>
+			ファイル10 : <input type="file" name="uploadfileA"><br>
+			<input type="hidden" name="chopboundary" value="0">
+			<button type="button" id="sendFile">Submit</button>
+		</div>
+	</form>
+	<script type="text/javascript">
+
+		if (window.File && window.FileReader && window.FileList && window.Blob) { // supported
+			//
+		} else { // not-supported
+		  alert("お使いのブラウザはFile APIをサポートしていません.");
+		}
+
+		/*
+		 * File dragger
+		 * * * * * * * * * * * * * * * * * * * * * * * */
+		var reader = new FileReader();
+		function chageFile(event){
+			reader.readAsDataURL();
+		}
+		xxx.addEventListener('change', function(){
+			changeFile(event);
+		}, false);
+
+
+		/*
+		 * Sending File
+		 * * * * * * * * * * * * * * * * * * * * * * * */
+		var sendBtn = document.getElementById('sendFile');
+		sendBtn.onclick = function(){
+			// Getting destination
+			var dest = document.getElementById('dest');
+			var fName = dest.options[dest.selectedIndex].value;
+
+			// Controlling Form
+			var upForm = document.getElementById('uploader');
+			upForm.action = "http://fire.cs.priv.teu.ac.jp/~aidasor/prokiso2/2017/acx/" + fName;
+			upForm.submit();
+		}
+
+	</script>
+</body>
+</html>
