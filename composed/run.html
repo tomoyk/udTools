@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Main</title>
+	<link rel="stylesheet" href="modules/css/normalize.css" type="text/css">
+	<style>
+		body {
+			background: #ddd;
+		}
+		main#wrapper {
+			background: #fff;
+			width: 100%;
+			max-width: 1000px;
+			margin: 10px auto;
+			padding: 10px 30px;
+			border: solid 2px #999;
+			border-radius: 30px;
+		}
+		ul.menu {
+			list-style: none;
+			padding: 0;
+		}
+		ul.menu > li {
+			display: inline-block;
+			padding: 8px 15px;
+			margin-right: 5px;
+			line-height: 1.4;
+			background: #e4e9ff;
+			border: solid 1px #0e1d58;
+		}
+		ul.menu > li > a {
+			text-decoration: none;
+			color: #0e1d58;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<main id="wrapper">
+		<h1>udTools</h1>
+		<nav>
+			<span id="status"></span>
+			<ul class="menu">
+				<li><a onClick="updateArea('modules/sendFiles.html')" href="#">ファイル提出</a></li>
+				<li><a onClick="updateArea('modules/getPassword.html')" href="#">メール送信</a></li>
+				<li><a onClick="updateArea('modules/getAttend.html', 4)" href="#">4限出席</a></li>
+				<li><a onClick="updateArea('modules/getAttend.html', 5)" href="#">5限出席</a></li>
+			</ul>
+		</nav>
+		<iframe src="modules/readme.html" width="800" height="600" id="area"></iframe>
+	</main>
+	<script type="text/javascript">
+		username="C0117000";
+		email="c0117000xx@edu.teu.ac.jp";
+		password="j2tgnwgaw"; // update weekly
+		uri_base="http://fire";
+
+		(function(){
+			var bar = document.getElementById("status");
+			bar.innerHTML = "あなたの学籍番号: <b>"+username+"</b>, あなたのパスワード: <b>"+password+"</b>, あなたのメールアドレス: <b>"+email+"</b>"
+		})();
+
+		function updateArea(uri, num){
+			area = document.getElementById("area");
+			area.setAttribute("src", uri+"?email="+email+"&user="+username+"&pass="+password+"&class="+num);
+		}
+	</script>
+</body>
+</html>

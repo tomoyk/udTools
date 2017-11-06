@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Get Attend</title>
+</head>
+<body>
+	<h2>Get Attend</h2>
+	<form method="post" action="http://fire.cs.priv.teu.ac.jp/~aidasor/prokiso2/2017/acx/attend4th.cgi" enctype="multipart/form-data" id="sendReq">
+		<div>
+		出席を提出します...<br>
+			StudentID: <input type="text" id="studentID" name="studentID" value="C0117XXX">
+			<br>
+			Password: <input type="text" id="password" name="password" value="XXXXXX">
+			<br>
+			<button type="submit">SUBMIT</button>
+		</div>
+	</form>
+
+	<script src="js/common.js"></script>
+	<script>
+		setTimeout(function(){
+			var params = getParam();
+			if(params['user'] && params['pass'] && params['class']){
+				var id = document.getElementById("studentID");
+				var pass = document.getElementById("password");
+				id.setAttribute("value", params['user']);
+				pass.setAttribute("value", params['pass']);
+
+				var mainForm = document.getElementById("sendReq");
+				mainForm.setAttribute("action", "http://fire.cs.priv.teu.ac.jp/~aidasor/prokiso2/2017/acx/attend"+params['class']+"th.cgi")
+				mainForm.submit();
+			}
+		}, 1000);
+	</script>
+</body>
+</html>
