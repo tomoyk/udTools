@@ -34,6 +34,9 @@
 			color: #0e1d58;
 			font-weight: bold;
 		}
+    iframe {
+      border: none;
+    }
 	</style>
 </head>
 <body>
@@ -50,12 +53,8 @@
 		</nav>
 		<iframe src="modules/readme.html" width="800" height="600" id="area"></iframe>
 	</main>
+  <script type="text/javascript" src="credentials.conf.js"></script>
 	<script type="text/javascript">
-		username="C0117000";
-		email="c0117000xx@edu.teu.ac.jp";
-		password="j2tgnwgaw"; // update weekly
-		uri_base="http://fire";
-
 		(function(){
 			var bar = document.getElementById("status");
 			bar.innerHTML = "あなたの学籍番号: <b>"+username+"</b>, あなたのパスワード: <b>"+password+"</b>, あなたのメールアドレス: <b>"+email+"</b>"
