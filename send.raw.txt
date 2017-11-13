@@ -1,0 +1,21 @@
+POST /~aidasor/prokiso2/2017/acx/getpasswd.cgi HTTP/1.1
+Host: fire.cs.priv.teu.ac.jp
+Content-Length: 167
+Cache-Control: max-age=0
+Origin: http://fire.cs.priv.teu.ac.jp
+Upgrade-Insecure-Requests: 1
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryzAaYfSYRALuACw5R
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:50.0) Gecko/20100101 Firefox/50.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+DNT: 1
+Referer: http://fire.cs.priv.teu.ac.jp/~aidasor/prokiso2/2017/acx/getpasswd.cgi
+Accept-Encoding: gzip, deflate
+Accept-Language: ja,en-US;q=0.8,en;q=0.6,zh-CN;q=0.4,zh;q=0.2,ru;q=0.2,da;q=0.2,fr;q=0.2,zh-TW;q=0.2,pt;q=0.2
+Cookie: _ga=GA1.3.589918009.1504187757
+Connection: close
+
+------WebKitFormBoundaryzAaYfSYRALuACw5R
+Content-Disposition: form-data; name="emailAddress"
+
+c0117xxxxx@edu.teu.ac.jp
+------WebKitFormBoundaryzAaYfSYRALuACw5R--
